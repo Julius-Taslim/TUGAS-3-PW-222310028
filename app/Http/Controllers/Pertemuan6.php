@@ -14,6 +14,9 @@ class Pertemuan6 extends Controller
     {
         return view('pertemuan-6.P6PBSignIn');
     }
+    public function signIn(){
+        return view ('pertemuan-4.SignIn');
+    }
 
     public function signInPA()
     {

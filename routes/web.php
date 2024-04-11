@@ -10,7 +10,7 @@ Route::get('/sign-in', [Pertemuan6::class, 'index']);
 Route::get('/sign-in/pa', [Pertemuan6::class, 'signInPA']);
 Route::get('/sign-in/pb', [Pertemuan6::class, 'signInPB']);
 Route::post('/sign-in', [Pertemuan6::class, 'postSignIn']);
-
+Route::get('/default',[Pertemuan6::class, 'SignIn']);
 Route::get('/pertemuan-5', [Pertemuan5::class, 'index']);
 Route::get('/pertemuan-5/latihan-pb', [Pertemuan5::class, 'LatihanPB']);
 Route::get('/pertemuan-5/latihan-pa', [Pertemuan5::class, 'LatihanPA']);

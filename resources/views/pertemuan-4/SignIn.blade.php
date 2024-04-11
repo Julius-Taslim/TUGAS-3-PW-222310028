@@ -132,7 +132,7 @@
             errorMsgPassword.textContent = "Password is required!";
             myButton.textContent = "Sign In";
             myButton.disabled = false;
-        } else if (username === "febrid@ibik.ac.id" && password === "ibik123") {
+        } else if (username === "222310028@student.ibik.ac.id" && password === "222310028") {
             errorMsgUsername.textContent = "";
             errorMsgPassword.textContent = "";
             setTimeout(() => {
