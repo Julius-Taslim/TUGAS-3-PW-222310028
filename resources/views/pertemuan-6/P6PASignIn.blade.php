@@ -36,7 +36,7 @@
             </div>
             <div class="card w-100 w-lg-400px">
                 <div class="card-body">
-                    <form action="{{ url('sign-in') }}" method="post" id="form-sign-in" onsubmit="handleSignIn(event)">
+                    <form action="" method="post" id="form-sign-in" onsubmit="handleSignIn(event)">
                         @csrf
                         <div class="text-center mb-10">
                             <h1>Bedtime Stories</h1>
@@ -87,38 +87,54 @@
         </div>
     </div>
 <script>
-
-    let textEmail = document.getElementById('email');
+let textEmail = document.getElementById('email');
     let textPassword = document.getElementById('password');
-    const handleSignIn = (event) => {
+    const showPass = () => {
+        const eyeIcon = document.getElementById('eye-icon');
+        if (textPassword.type === "password") {
+            textPassword.type = "text";
+            eyeIcon.classList.remove('bi-eye');
+            eyeIcon.classList.add('bi-eye-slash');
+        } else {
+            textPassword.type = "password";
+            eyeIcon.classList.remove('bi-eye-slash');
+            eyeIcon.classList.add('bi-eye');
+        }
+    }
+
+    const handleSignIn = (e) => {
         event.preventDefault();
+        var formid = e.target.id;
+        var target = document.getElementById(formid);
+
+        var myButton = target.getElementsByClassName("btn-submit")[0];
+
         let email = textEmail.value;
         let password = textPassword.value;
+
+        myButton.textContent = "Loading...";
+        myButton.disabled = true;
+
         console.log(email, password);
         if(email === ""){
-            alert("email tidak boleh kosong")
+            alert("email tidak boleh kosong");
+            myButton.textContent = "Sign in";
+            myButton.disabled = false;
         }else if(password === ""){
-            alert("password tidak boleh kosong")
+            alert("password tidak boleh kosong");
+            myButton.textContent = "Sign in";
+            myButton.disabled = false;
         }else{
-            if(email === "222310063@student.ibik.ac.id" && password === "222310063"){
-            alert("Welcome")
+            if(email === "222310028@student.ibik.ac.id" && password === "222310028"){
+                alert("Welcome");
+                myButton.textContent = "Sign in Success!";
             }else{
-                alert("username tidak ditemukan")
+                alert("username tidak ditemukan");
             }
+            myButton.disabled = false;
         }
 
     }
-
-    function showPass(){
-        let password = textPassword.type;
-        console.log(password)
-        if(password==="password"){
-            textPassword.type="text";
-        }else{
-            textPassword.type="password";
-        }
-    }
-
 </script>
 </body>
 

@@ -5,7 +5,8 @@ use App\Http\Controllers\Pertemuan6;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [Pertemuan6::class, 'index']);
+Route::get('/', [Pertemuan6::class, 'signInPA']); //Tugas
+
 Route::get('/sign-in', [Pertemuan6::class, 'index']);
 Route::get('/sign-in/pa', [Pertemuan6::class, 'signInPA']);
 Route::get('/sign-in/pb', [Pertemuan6::class, 'signInPB']);
